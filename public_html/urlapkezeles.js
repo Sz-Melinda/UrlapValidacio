@@ -1,6 +1,6 @@
 window.addEventListener("load", init);
 
-
+/*-------------------------------------------------------*/
 function ID(nev){
     
     return document.getElementById(nev);
@@ -20,11 +20,12 @@ function init(){
 
 function validalas(){
     
-    //console.log("Hahó");
+    var megadottAdatok = "";
     
+    /*-------------------------------------------------------*/
+    // NÉV VALIDÁLÁS
     
     var uzenet = "";
-    var megadottAdatok = "";
     
     if(ID("nev").value.length < 3){
         
@@ -38,9 +39,9 @@ function validalas(){
     }
     
     
-    var reg = /[A-Z] + [a-z] {2,}/;
+    var regNev = /[A-Z] + [a-z] {2,}/;
     
-    if(!reg.test(ID("nev").value)){
+    if(!regNev.test(ID("nev").value)){
         
         uzenet = "A név legalább 3 karakter hosszú legyen, és nagybetűvel kezdődjön!<br>";
         
@@ -53,7 +54,41 @@ function validalas(){
         megadottAdatok += "Név: " + ID("nev").value + "<br>";
     }
     
-    //console.log(uzenet);
+    /*-------------------------------------------------------*/
+    // EMAIL VALIDÁLÁS
+    
+    var regEmail = /[a-z]+@[a-z]+.hu$/;
+    
+    if(!regEmail.test(ID("email").value)){
+        
+        uzenet = "Nem megfelelő az email formátuma!<br>";
+        
+        ID("email").style.border = "2px solid red";
+        
+    }else{
+        
+        ID("email").style.border = "none";
+        
+        megadottAdatok += "Email: " + ID("email").value + "<br>";
+    }
+    
+    
+    
+    
+    if(ID("email") != ID("emailUj")){
+        
+        uzenet = "Az Email címek nem egyeznek!<br>";
+        
+        ID("emailUj").style.border = "2px solid red";
+    }else{
+        
+        ID("nev").style.border = "none";
+    }
+    
+    
+    
+    /*-------------------------------------------------------*/
+    
     $("aside section:nth-child(1) p")[0].innerHTML = uzenet;
     $("aside section:nth-child(2) p")[0].innerHTML = megadottAdatok;
 }
