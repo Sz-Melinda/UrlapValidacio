@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>Szikora Melinda</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="urlapkezeles.js" type="text/javascript"></script>
+        
+        <link href="formazasok.css" rel="stylesheet" type="text/css"/>
+        <link href="szerkezet.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    
+    <body>
+        
+        <main>
+            
+            <header>
+                <h1>Üdvözöljük a weblapunkon!</h1>
+            </header>
+            
+            <nav>
+                <a href="index.html">Űrlap</a>
+                <a href="#">Menü 1</a> 
+                <a href="#">Menü 2</a>
+            </nav>
+            
+            <article>
+                
+               <h2>Kérem adja meg az adatait!</h2>
+               
+                <form method="get" >
+                    
+                    <fieldset>
+                        <div class="urlapelem">
+                            
+                           <label for="nev">Név</label>
+
+                           <input type="text" name="nev" id="nev" placeholder="Adja meg a nevét!" title="A név nagybetűvel kezdődik és legalább 3 karakter!" >
+                            
+                        </div> 
+                    </fieldset>
+                    
+                    <input type="button" id="kuld" value="KÜLD">
+                    
+            </article>
+            
+            <aside>
+                
+                <section>
+                    <h3>Űrlap validáció</h3>
+                    <p>
+                       Itt jelenik majd meg, hoyg van-e hiba az űrlap kitöltésekor. Például űres mező, vagy nem megfelelő formátumú e-mail cím, weboldal, telefonszám.
+                    </p>
+                </section>
+                
+                <section>
+                   <h3>Űrlap adatok</h3>
+                   <p>Itt jelennek majd meg a z űrlapon megadott adatok  </p>
+                </section>
+
+            </aside>
+            
+            <footer>
+                <p>Céggel kapcsolat információk</p>
+            </footer>
+            
+        </main>
+        
+    </body>
+</html>
